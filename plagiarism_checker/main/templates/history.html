@@ -1,0 +1,22 @@
+<!-- history.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plagiarism History</title>
+</head>
+<body>
+    <h2>Your Plagiarism Check History</h2>
+    <ul>
+        {% for record in history %}
+            <li>
+                Checked on: {{ record.checked_on }} - Plagiarism: {{ record.plagiarism_percentage }}%
+                <br>
+                Input Text: {{ record.input_text }}
+            </li>
+        {% empty %}
+            <li>No history found.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+</body>
+</html>
